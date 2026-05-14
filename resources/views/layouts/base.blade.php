@@ -5,9 +5,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Hello</title>
+        <title>@yield('title')</title>
+        @vite(['resources/css/app.css'])
+        @stack('styles')
+        @stack('scripts')
         </head>
+
     <body>
-        <h1>hello vous </h1>
+
+        @yield('content')
+        @stack('scripts')
+
     </body>
 </html>

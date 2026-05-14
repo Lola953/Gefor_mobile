@@ -1,17 +1,16 @@
-@import 'tailwindcss';
+<!DOCTYPE html>
+<!-- Déclare un fichier HTML5 -->
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+<meta charset="UTF-8">
+<!-- Permet les accents et caractères spéciaux -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Adapte la page aux écrans mobiles -->
+  <title>Groupe GEFOR</title>
+  <!--titre-->
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
-
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
-}
-
-
- * {
+  <style>
+    * {
       margin: 0; /* Supprime les marges ext */
       padding: 0;/* Supprime les espaces intérieurs */
       box-sizing: border-box;/* Taille inclut padding et border */
@@ -84,5 +83,20 @@
       font-family: Georgia, serif;
       font-weight: 400;
     }
-
-
+  </style>
+        </head>
+    <body>
+          <div class="logo-container">
+            <div class="logo-inner">
+              <span class="big-g">G</span>
+              <div class="right-text">
+                <span class="roupe">ROUPE</span>
+                <div class="gefor-line">
+                  <span class="ge">E</span>
+                  <span class="for">FOR</span>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+</html>
