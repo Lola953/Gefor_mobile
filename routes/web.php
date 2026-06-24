@@ -11,9 +11,6 @@ Route::get('/veille', function () {
 });
 
 Route::get('/', function () {
-    if (Auth::check()) {
-        return redirect()->route('accueil');
-    }
     return redirect()->route('login');
 });
 
@@ -23,9 +20,7 @@ Route::get('/login', function () {
 
 Route::post('/login', [ApiAuthController::class, 'login'])->name('login.post');
 
-Route::middleware('auth')->group(function () {
-    Route::get('/logout', [ApiAuthController::class, 'logout'])->name('logout');
-    Route::get('/accueil', [ApiCoursController::class, 'index'])->name('accueil');
-    Route::get('/signature/{id}', [ApiCoursController::class, 'show'])->name('signature');
-    Route::post('/signature', [ApiSignatureController::class, 'store'])->name('signature.store');
-});
+Route::get('/logout', [ApiAuthController::class, 'logout'])->name('logout');
+Route::get('/accueil', [ApiCoursController::class, 'index'])->name('accueil');
+Route::get('/signature/{id}', [ApiCoursController::class, 'show'])->name('signature');
+Route::post('/signature', [ApiSignatureController::class, 'store'])->name('signature.store');
